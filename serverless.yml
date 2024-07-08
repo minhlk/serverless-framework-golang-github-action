@@ -1,0 +1,20 @@
+service: aws-golang-simple-http-endpoint
+
+provider:
+  name: aws
+  runtime: provided.al2023
+  stage: dev
+  region: ap-southeast-1
+  ecr:
+    images:
+      latest:
+        file: Dockerfile
+        path: ./
+
+functions:
+  simple-function:
+    description: Simple lambda function that run Go code in a container
+    image:
+      name: latest
+    events:
+      - httpApi: "*"
