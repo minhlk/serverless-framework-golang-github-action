@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: provided.al2023
   stage: dev
-  region: ap-southeast-1
+  region: ap-southeast-1w
   ecr:
     images:
       latest:
@@ -13,7 +13,7 @@ provider:
 
 functions:
   simple-function:
-    description: Simple lambda function that run Go code in a container
+    description: Simple lambda function that run Go code in a containerdummy text
     image:
       name: latest
     events:
